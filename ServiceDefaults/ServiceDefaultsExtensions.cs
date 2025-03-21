@@ -16,6 +16,9 @@ public static class ServiceDefaultsExtensions
         // Add resilience for HTTP clients
         builder.Services.AddHttpClient().AddResilienceEnricher();
 
+        // Add logging
+        builder.Services.AddLogging();
+
         // Add OpenTelemetry
         builder.Services.AddOpenTelemetry()
             .WithMetrics(metrics =>

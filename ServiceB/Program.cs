@@ -9,6 +9,7 @@ var app = builder.Build();
 // Middleware
 app.UseRouting();
 app.UseSwagger();
+app.UseSwaggerUI();
 app.UseCloudEvents(); // Dapr pub/sub 
 app.MapSubscribeHandler();
 
