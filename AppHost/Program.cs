@@ -12,11 +12,11 @@ builder.AddProject<Projects.ServiceA>("service-a")
         AppId = "service-a",
         AppProtocol = "grpc", // Default protocol, HTTP also supported
         DaprGrpcPort = 50001,
-        DaprHttpPort = 3500
+        DaprHttpPort = 3500,
+        EnableApiLogging = true
     })
     .WithReference(stateStore)
-    .WithReference(pubSub)
-    .WithExternalHttpEndpoints();
+    .WithReference(pubSub);
 
 // ServiceB (HTTP-only)
 builder.AddProject<Projects.ServiceB>("service-b")
@@ -24,7 +24,8 @@ builder.AddProject<Projects.ServiceB>("service-b")
     {
         AppId = "service-b",
         AppProtocol = "http",
-        DaprHttpPort = 3501
+        DaprHttpPort = 3501,
+        EnableApiLogging = true
     })
     .WithReference(pubSub);
 
@@ -34,8 +35,9 @@ builder.AddProject<Projects.ServiceC>("service-c")
     {
         AppId = "service-c",
         AppProtocol = "grpc",
-        DaprGrpcPort = 50002
+        DaprGrpcPort = 50002,
+        EnableApiLogging = true
     })
     .WithReference(stateStore);
-    
+
 builder.Build().Run();
