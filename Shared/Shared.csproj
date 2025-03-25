@@ -4,13 +4,13 @@
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <IncludeHttpRuleProtos>true</IncludeHttpRuleProtos>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Google.Protobuf" Version="3.30.1"/>
-        <PackageReference Include="Grpc" Version="2.46.6" />
-        <PackageReference Include="Grpc.Core" Version="2.46.6" />
-        <PackageReference Include="Grpc.Net.Client" Version="2.62.0" />
+        <PackageReference Include="Grpc" Version="2.46.6"/>
+        <PackageReference Include="Grpc.Net.Client" Version="2.62.0"/>
         <PackageReference Include="Grpc.Tools" Version="2.71.0">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -19,7 +19,10 @@
 
     <ItemGroup>
         <!-- Include all .proto files in protos and subdirectories -->
-        <Protobuf Include="protos\**\*.proto" GrpcServices="Both" />
+        <Protobuf Include="protos\v1\**\*.proto" GrpcServices="Both"
+                  ProtoRoot="protos"/>
+        <Protobuf Include="protos\google\**\*.proto" GrpcServices="Client"
+                  ProtoRoot="protos"/>
     </ItemGroup>
 
 </Project>

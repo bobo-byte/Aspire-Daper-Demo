@@ -12,7 +12,7 @@ app.UseSwagger();
 app.UseSwaggerUI();
 app.UseCloudEvents(); // Dapr pub/sub 
 app.MapSubscribeHandler();
+app.MapControllers();
+app.MapGet("/health", () => Results.Ok("OK"));
 
-app.Run();
-
-// WeatherController.cs
+await app.RunAsync();

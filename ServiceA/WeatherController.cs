@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Shared.Protos.v1;
 
 namespace ServiceA;
 
@@ -7,9 +8,12 @@ namespace ServiceA;
 public class WeatherController : ControllerBase
 {
     [HttpGet("{city}")]
-    public IResult Get(string city)
+    public ActionResult<WeatherResponse> Get(string city)
     {
-        return Results.Ok(new
-            { City = city, Temperature = 25.5 });
+        return Ok(new WeatherResponse
+        {
+            City = city,
+            Temperature = 20
+        });
     }
 }

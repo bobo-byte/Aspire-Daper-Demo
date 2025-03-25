@@ -2,8 +2,14 @@ syntax = "proto3";
 option csharp_namespace = "Shared.Protos.v1";
 package weather.v1;
 
+import "google/api/annotations.proto"; 
+
 service WeatherService {
-  rpc GetWeather (WeatherRequest) returns (WeatherResponse);
+  rpc GetWeather (WeatherRequest) returns (WeatherResponse) {
+    option (google.api.http) = {
+      get: "/v1/api/weather/{city}"
+    };
+  }
 }
 
 message WeatherRequest {

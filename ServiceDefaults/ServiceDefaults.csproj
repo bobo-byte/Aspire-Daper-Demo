@@ -8,12 +8,12 @@
     </PropertyGroup>
     <ItemGroup>
         <FrameworkReference Include="Microsoft.AspNetCore.App"/>
-        <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.3.0" />
-        <PackageReference Include="Microsoft.Extensions.ServiceDiscovery" Version="9.1.0" />
-        <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.11.2" /> <!-- Or latest -->
-        <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.11.1" /> <!-- Or latest -->
-        <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.11.1" /> <!-- For AddHttpClientInstrumentation -->
-        <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.11.1" /> <!-- For AddRuntimeInstrumentation -->
+        <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.3.0"/>
+        <PackageReference Include="Microsoft.Extensions.ServiceDiscovery" Version="9.1.0"/>
+        <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.11.2"/> <!-- Or latest -->
+        <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.11.1"/> <!-- Or latest -->
+        <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.11.1"/> <!-- For AddHttpClientInstrumentation -->
+        <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.11.1"/> <!-- For AddRuntimeInstrumentation -->
     </ItemGroup>
 </Project>
 
